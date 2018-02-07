@@ -1,0 +1,82 @@
+Wed Sep 20 18:45:24 ICT 2017
+
+====================== PREPARING DATA =======================
+
+=== BASIS INFO ===
+Emax =    4.500 a.u. 
+NBAS = 2694
+mmin = 0
+mmax = 0
+
+=== MESH INFO ===
+ikind = 1
+NRAD  = 350
+NETA  = 100
+RMAX  = 70.00000000000000
+ 
+RmOrbital: mIndex out of range m = -1, n = 1
+RmOrbital: mIndex out of range m = 1, n = 1
+=== REMOVE ORBITALS INFO ===
+Number of orbitals removed = 4
+    0    1   -18.385746
+    0    2   -10.597455
+    0    3    -1.164071
+    0    4    -0.641740
+
+=== DIPOLE ELEMENTS CALCULATING ===
+Please take a cup of tea, it takes few seconds to hours...
+
+=== MASK FUNCTION INFO ===
+Mask function starts at =  35.00 a.u..
+
+=== DYNAMIC CORE INFO ===
+ALPHAXY =   6.720000
+ALPHAZZ =  12.220000
+
+===============================================================
+Time preparing data consumption =      132.2992010000000107 s
+
+=== LASER PARAMETERS ===
+Number of cycles  =   3 cycles
+Time FWHM         =   8.00 fs             =  330.918 a.u.T
+Peak of intensity =   2.00 x 10^14 W/cm^2 =    0.075 a.u.I
+Energy            =   1.55 eV             =    0.057 a.u.E
+Ponderomotive     =   0.44 a.u.E
+
+=== GROUND STATE INFO ===
+
+nini = 5
+mini = 0
+
+***************************************************************
+THETA = 0
+====================== PROPAGATING TDSE =======================
+dt =   0.055153 a.u.
+t  =   600/6000 Ntmaxt  =   1200/6000 Ntmaxt  =   1800/6000 Ntmaxt  =   2400/6000 Ntmaxt  =   3000/6000 Ntmaxt  =   3600/6000 Ntmaxt  =   4200/6000 Ntmaxt  =   4800/6000 Ntmaxt  =   5400/6000 Ntmaxt  =   6000/6000 Ntmax
+===============================================================
+Total time consumption         =      417.0495389999999816 s
+Time solving consumption       =      276.3110540000004107 s
+Time writing out consumption   =       72.9325500000000204 s
+
+***************************************************************
+THETA = 180
+====================== PROPAGATING TDSE =======================
+dt =   0.055153 a.u.
+t  =   600/6000 Ntmaxt  =   1200/6000 Ntmaxt  =   1800/6000 Ntmaxt  =   2400/6000 Ntmaxt  =   3000/6000 Ntmaxt  =   3600/6000 Ntmaxt  =   4200/6000 Ntmaxt  =   4800/6000 Ntmaxt  =   5400/6000 Ntmaxt  =   6000/6000 Ntmax
+===============================================================
+Total time consumption         =      390.5260099999999852 s
+Time solving consumption       =      258.3957819999995991 s
+Time writing out consumption   =       68.1433219999998698 s
+
+
+ ================= CALC HHG SPECTRA =================
+   Maximum harmonic order      =    84
+   step of order               =    0.05
+ ====================================================
+   Smooth HHG with sigma       =    2.0*omega_laser
+   Derivatives use finite differences.
+ ====================================================
+   Alignment angle             =    0 degree(s)
+   Alignment angle             =  180 degree(s)
+
+Wed Sep 20 19:01:05 ICT 2017

@@ -1,0 +1,13 @@
+!--- PARAMETERS FOR CALCULATING IONIZATION RATE ---!
+
+&INOUT_INFO
+	DATADIR  = './test'
+/
+
+&ORIENT_INFO
+	thetamin = 0
+	thetamax = 0
+	thestep  = 45
+/
+
+

@@ -1,0 +1,8 @@
+&LASER_INFO
+    Ncycle  = 3
+    PeakInt =    2.284
+    omega0  =    1.550
+    phacep  =  180.000
+    Add     =    0.000
+    Nt      = 2000
+/
