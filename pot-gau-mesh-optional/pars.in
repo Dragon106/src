@@ -1,0 +1,20 @@
+----- PARAMETERS FOR GRIDS -----
+Gauss-Legendre (1) / Laguerre & Jacobi (2)
+2
+
+NRAD,	NETA,	RMAX,	R_ASYM
+400		120		100.0	20.0 
+
+NPGAU
+32
+
+----- ASSOCIATED LEGENDRE PARAMETERS -----
+LMAX
+60
+
+----- PARAMETERS FOR EXCHANGE POTENTIAL -----
+ALPHA,	BETA
+1.0		0.05
+
+----- V_c: YES (1) / NO (0) -----
+0
