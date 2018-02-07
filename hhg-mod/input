@@ -1,0 +1,74 @@
+PARAMETERS FOR TDSE AND HHG CALCULATION
+
+&ORIENT_INFO
+    
+    theta_min  = 10
+    theta_max  = 10
+    theta_step = 5
+
+/
+
+&MOL_INFO
+
+    NINI = 2
+    MINI = 1
+    PotI = 13.78d0
+
+/
+
+&LASER_INFO
+    
+    Ncycle  = 5.0d0
+    PeakInt = 2.0d0
+    omega0 = 1.55d0
+    phacep = 0.0d0
+    Add    = 0.0d0
+    Nt     = 800
+
+/
+
+&HHG_INFO
+
+    sigma  = 1.0d0
+    domega = 0.2d0
+     
+	dat_dir = './output_test/'	
+ 
+    isout_dip = .True.
+    isout_vec = .False.
+    isout_acc = .True.
+    isout_grd = .FASLE.
+/
+
+&MESH_INFO
+    
+    Rmax = 120.0d0
+    Nrad = 380
+    Neta = 120
+    
+/
+
+&BASIS_INFO
+
+    MMIN = 0
+    MMAX = 20
+    NBAS = 10000
+
+/
+
+&ABSORB_INFO
+    
+    IAB = 0
+    RAB = 60.0d0
+    
+/
+
+&TDSE_INOUT
+! DIRECTORY CONTAINING TISE INPUT AND GRADIENT OF POTENTIAL
+    TISE_DIR = './input-tise/'
+	GRAD_DIR = './potential/'
+
+! FILENAME OF OUTPUT DIRECTORY
+    OUT_DIR = './output10-15/'
+    
+/

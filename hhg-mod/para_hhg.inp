@@ -1,0 +1,32 @@
+!=== PARAMETERS FOR HHG CALCULATION ===
+
+&ORIENT_INFO
+    
+    theta_min  = 0
+    theta_max  = 0
+    theta_step = 10
+
+/
+
+&MOL_INFO
+
+    PotI = 13.78d0
+
+/
+
+&HHG_INFO
+
+	dat_dir = './output_test/'
+    
+    isSpline3der = .true.
+    
+    isout_dip = .false.
+    isout_vec = .true.
+    isout_acc = .true.
+    isout_grd = .FASLE.
+
+    sigma  = 2.0d0
+    domega = 0.2d0
+
+/
+
