@@ -5,7 +5,6 @@
 ! **********************************************************************
 
 program saepot_calc
-	!use omp_lib !!!
 	use type_vars
 	use consts
 	use read_pars
@@ -31,8 +30,8 @@ program saepot_calc
 	call pre_calc_dens()
 	
 !-- calc electron density
- 	call calc_dens_gau()  ! from Gaussian
-!~  	call calc_dens_tise() ! from TISE wf
+!~  	call calc_dens_gau()  ! from Gaussian
+ 	call calc_dens_tise() ! from TISE wf
 
 	call read_edens()     ! read eden, seden, gr_seden, ge_eden   
 	
@@ -125,7 +124,6 @@ function harpot
 
 	temp = 0.0_dp
 
-!~ 	!$omp parallel do private (i,j,k) reduction (+:temp)
 	do i = 1, Nrad
 		Rp = rad(i) ! r'
 		do j = 1, Neta
@@ -145,7 +143,6 @@ function harpot
 			enddo
 		enddo
 	enddo
-!~ 	!$omp end parallel do
 
 	harpot = temp	
 
@@ -186,12 +183,11 @@ end function
 !-----------
 
 function corpot(i,j)
-!-- Vosko et al. 1980
     integer, intent(in) :: i, j
     real(dp) :: corpot
 
-!-- Using ferromagnetic parameters
-    real(dp), parameter :: a = 0.0621814/2 
+!-- Using ferromagnetic parameters	
+    real(dp), parameter :: a = 0.0621814/2
     real(dp), parameter :: b = 7.06042
     real(dp), parameter :: c = 18.057
     real(dp), parameter :: x0 = -0.32500
@@ -208,9 +204,9 @@ function corpot(i,j)
     Xx0 = x0**2 + b*x0 + c
     Q = sqrt(4*c - b**2)
 
-!-- In Hartree unit, the formula (in Rydberg unit) must be added factor 1/2
+!-- In Hartree unit, the formula (in Rydberg unit) must be added the factor 1/2
     ec = 0.5 * a * ( log(x**2 / Xx) + 2*b/Q * atan(Q / (2*x + b) ) &
-                   - b*x0 / Xx0 * (log( (x-x0)**2 / Xx ) + 2*(b + 2*x0) /Q *atan( Q/(2*x + b) ) ) )
+                   - b*x0 / Xx0 * (log( (x-x0)**2 / Xx ) + 2*(b + x*x0) /Q *atan( Q/(2*x + b) ) ) )
 
     corpot = ec - a/6 * ( (x - x0)*c - b*x*x0 ) / ( (x - x0) * Xx )
    
