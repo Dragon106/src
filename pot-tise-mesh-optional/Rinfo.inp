@@ -1,0 +1,9 @@
+NAtom    Units(Bohr=1 & Ams=2 for input XYZ only)
+ 3              2
+
+Symbol		Zatom		X   		Y   		Z (Positions of the atoms)
+ C          6        0.00000000    0.00000000    0.00000000
+ O          8        0.00000000    0.00000000    1.16900000
+ O          8        0.00000000    0.00000000   -1.16900000
+    
+ 
