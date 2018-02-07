@@ -206,7 +206,7 @@ function corpot(i,j)
 
 !-- In Hartree unit, the formula (in Rydberg unit) must be added the factor 1/2
     ec = 0.5 * a * ( log(x**2 / Xx) + 2*b/Q * atan(Q / (2*x + b) ) &
-                   - b*x0 / Xx0 * (log( (x-x0)**2 / Xx ) + 2*(b + x*x0) /Q *atan( Q/(2*x + b) ) ) )
+                   - b*x0 / Xx0 * (log( (x-x0)**2 / Xx ) + 2*(b + 2*x0) /Q *atan( Q/(2*x + b) ) ) )
 
     corpot = ec - a/6 * ( (x - x0)*c - b*x*x0 ) / ( (x - x0) * Xx )
    
