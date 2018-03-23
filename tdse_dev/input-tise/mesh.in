@@ -1,0 +1,6 @@
+&MESH_INFO
+	Ikind = 1
+	NRAD  = 90
+	NETA  = 80
+	RMAX  = 30.0D0 
+/

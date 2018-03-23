@@ -1,0 +1,39 @@
+Gauss-Legendre for both r and eta!
+
+=== FORMER GRIDS ===
+NR1  =         400
+NE1  =         120
+Rmax =   19.999820
+
+=== MESH INFO ===
+NRAD =          90
+NETA =          80
+RMAX =   30.000000
+NBR  =          30
+
+
+Exponential bps, gamma =   2.00
+
+=== BASIS INFO ===
+NBR  =          30
+NBE  =          41
+NBAS =        1230
+MQ   =           0
+
+=== ENERGY INFO ===
+Emax =    3.000000
+Nmax =         526
+
+FIRST TEN ENERGY LEVELS
+ 1    -12.987101
+ 2    -12.182119
+ 3     -1.019516
+ 4     -0.560564
+ 5     -0.477249
+ 6     -0.107187
+ 7     -0.078123
+ 8     -0.051102
+ 9     -0.044473
+10     -0.038219
+
+CALC WF DONE!

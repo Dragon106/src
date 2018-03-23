@@ -5,11 +5,6 @@ module laser_m
 	
 	private
 
-!	interface elaser
-!		module procedure elaser_sinsquared
-!		module procedure elaser_trapezoid
-!	end interface 
-	
     type :: elaser_t
 		integer  :: itype_env
 
@@ -159,9 +154,26 @@ subroutine elaser(this, t, Ey, Ez)
 	
 	real(wp) :: Et
 
-	if (this%itype_env == 1) call elaser_sinsquared()
+!~ 	if (this%itype_env == 1) call elaser_sinsquared()
 
-	if (this%itype_env == 2) call elaser_trapezoid()
+!~ 	if (this%itype_env == 2) call elaser_trapezoid()
+
+	select case (this%itype_env)
+	case(1)
+		call elaser_sinsquared()
+	case(2)
+		call elaser_trapezoid()
+	case default
+		write(*,'(A)') 'Please choose 1 (sin-squared) or 2 (trapezoid)!'
+		stop
+	end select 
+
+!~ 	select case (this%itype_env)
+!~ 	case("SinSquared") 
+!~ 		call elaser_sinsquared()
+!~ 	case("Trapezoid")
+!~ 		call elaser_trapezoid()
+!~ 	end select 
 
 contains
 !-------
@@ -201,6 +213,7 @@ contains
 	!-------------
 
 end subroutine
+!-------------
 
 subroutine destroy_laser(this)
 	class(elaser_t), intent(inout) :: this
