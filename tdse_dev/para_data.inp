@@ -1,0 +1,73 @@
+&BASIS_INFO
+
+	mmin = 0
+	mmax = 0
+
+	emax = 2.9d0
+
+/
+
+&ORIENT_INFO
+
+	thetamin = 0
+	thetamax = 0
+	theStep  = 180
+
+/
+
+&LASER_INFO
+!-- Type of envelope (1 = sin-square, 2 = trapezoid)
+    itype_env = 2
+
+!-- Number of cycle of laser pulse
+    Ncycle  = 10
+
+!-- If itype_env = 2, needing add Ncycle_turns and Ncycle_const 
+	Ncycle_turns = 3
+	Ncycle_const = 4
+
+!-- Other parameters
+    PeakInt = 1.5d0
+    omega0 = 1.55d0
+    phacep = 90.0d0
+    Add    = 0.0d0
+    Nt     = 500
+/
+
+&DYNAMIC_CORE
+
+	IsDynCore = .false.
+!-- FOR CO  (alphaxy = 6.72d0; alphazz = 12.22d0)
+!-- FOR CO2 (alphaxy = 9.95d0; alphazz = 24.06d0)
+ 	
+	ALPHAXY = 6.72d0
+	ALPHAZZ = 12.22d0
+/
+
+&GS_INFO
+	NINI = 5
+	MINI = 0
+/
+
+&RMORB_INFO
+
+	IsRmOrbital = .true.
+	
+	diagram_file = 'rmorb.in' 
+/
+
+&MASKFUNC_INFO
+
+	IsMaskFunc = .true.
+	z0 = 20.0d0
+	
+/
+
+&OUTPUT_INFO
+	isout_laser = .true.
+	isout_dip   = .false.
+	isout_norm  = .false.
+	isout_prob  = .false.
+	isout_energy = .false.
+	isout_coeff = .false.
+/
