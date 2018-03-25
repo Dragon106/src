@@ -155,7 +155,6 @@ subroutine elaser(this, t, Ey, Ez)
 	real(wp) :: Et
 
 !~ 	if (this%itype_env == 1) call elaser_sinsquared()
-
 !~ 	if (this%itype_env == 2) call elaser_trapezoid()
 
 	select case (this%itype_env)
@@ -195,7 +194,7 @@ contains
 		t_on  = this%Ncycle_turns * 2*pi / this%omega0
 		t_off = (this%Ncycle_const + this%Ncycle_turns) * 2*pi / this%omega0
 
-		if(t <= t_on) then
+		if (t <= t_on) then
 			Et = t / t_on * cos(this%omega0 * t + this%phacep) &
 			   + 1.0_wp / t_on * sin(this%omega0 * t + this%phacep) / this%omega0
 		elseif( t > t_on .and. t < t_off ) then 
