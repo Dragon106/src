@@ -14,14 +14,72 @@ contains
 subroutine read_arguments(input_fln, datdir, outdir)
 	character(len = *), intent(out) :: input_fln, datdir, outdir
 	
-	call get_command_argument(1, input_fln)
-		if (input_fln == '') input_fln = 'para_data.inp'
-		
-	call get_command_argument(2, datdir)
-		if (datdir == '')    datdir    = './input-tise/'
+	integer :: iarg
+	character (len=100) :: arg
 	
-	call get_command_argument(3, outdir)
-	    if (outdir == '')    outdir    = './output-tdse/'
+!~ 	call get_command_argument(1, input_fln)
+!~ 		if (input_fln == '') input_fln = 'para_data.inp'
+		
+!~ 	call get_command_argument(2, datdir)
+!~ 		if (datdir == '')    datdir    = './input-tise/'
+	
+!~ 	call get_command_argument(3, outdir)
+!~ 	    if (outdir == '')    outdir    = './output-tdse/'
+	
+	do iarg = 1, command_argument_count()
+		
+		call get_command_argument(iarg, arg)
+		
+		select case (arg)
+		case ('--input_fln')
+			call get_command_argument(iarg+1, arg)
+			input_fln = trim(arg)
+			iarg = iarg+1
+			
+		case ('--input-tise')
+			call get_command_argument(iarg+1, arg)
+			datadir = trim(arg)
+			iarg = iarg+1 
+		
+		case ('--output')
+			call get_command_argument(iarg+1, arg)
+			outdir = trim(arg)
+			iarg = iarg+1
+		
+		case ('-h', '--help')
+			call print_help()
+			stop
+		
+		case default
+		!	call print_help()
+		!	stop
+			
+		end select 
+		
+	enddo
+	
+	if (input_fln == '') input_fln = 'para_data.inp'
+	if (datdir == '')    datdir    = './input-tise/'
+	if (outdir == '')    outdir    = './output-tdse/'
+	
+	call print_options()
+	
+contains
+!-------
+	subroutine print_help()
+		print*, './src' 
+		print*, '    -h, --help  :  print help'
+		print*, '    --input_fln : input fileaname'
+		print*, '    --input-tise: input folder'
+		print*, '    --output    : output folder'
+		
+	end subroutine
+	!-------------
+	
+	subroutine print_options()
+		print*, 
+	end subroutine
+	!-------------
 	
 end subroutine
 !-------------
